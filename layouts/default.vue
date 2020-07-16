@@ -1,61 +1,58 @@
 <template>
   <div>
-    <nav
-      class="navbar header has-shadow is-primary"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-          <img src="~assets/buefy.png" alt="Buefy" height="28" />
-        </a>
+    <section>
+      <div class="Site">
+        <!-- Navbar -->
+        <div class="Site-content">
+          <div>
+            <nav
+              class="navbar is-fixed-top is-black"
+              role="navigation"
+              aria-label="main navigation"
+            >
+              <navbar />
+            </nav>
+          </div>
 
-        <div class="navbar-burger">
-          <span />
-          <span />
-          <span />
+          <!-- Page content will be inserted here  -->
+          <nuxt />
         </div>
-      </div>
-    </nav>
 
-    <section class="main-content columns">
-      <aside class="column is-2 section">
-        <p class="menu-label is-hidden-touch">
-          General
-        </p>
-        <ul class="menu-list">
-          <li v-for="(item, key) of items" :key="key">
-            <nuxt-link :to="item.to" exact-active-class="is-active">
-              <b-icon :icon="item.icon" /> {{ item.title }}
-            </nuxt-link>
-          </li>
-        </ul>
-      </aside>
-
-      <div class="container column is-10">
-        <nuxt />
+        <!-- Footer -->
+        <thefooter />
       </div>
     </section>
   </div>
 </template>
 
 <script>
+import navbar from '../components/Navbar'
+import thefooter from '../components/Footer'
 export default {
+  components: {
+    navbar,
+    thefooter
+  },
   data() {
-    return {
-      items: [
-        {
-          title: 'Home',
-          icon: 'home',
-          to: { name: 'index' }
-        },
-        {
-          title: 'Inspire',
-          icon: 'lightbulb',
-          to: { name: 'inspire' }
-        }
-      ]
-    }
+    return {}
   }
 }
 </script>
+
+<style>
+body {
+  background-color: black;
+}
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.Site-content {
+  flex: 1;
+}
+.navbar {
+  background-color: transparent;
+  background-image: none;
+}
+</style>
