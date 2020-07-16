@@ -29,7 +29,12 @@
 
 <script>
 export default {
-  name: 'About'
+  name: 'About',
+  head() {
+    return {
+      title: '</About>'
+    }
+  }
 }
 </script>
 

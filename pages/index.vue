@@ -66,6 +66,19 @@ export default {
   components: {
     GithubTrending,
     Tweet
+  },
+  head() {
+    return {
+      title: '</Home>'
+      // meta: [
+      //   {
+      //     hid: 'og-title',
+      //     property: 'og:title',
+      //     content: this.carDetails.title
+      //   }
+      //   // other meta
+      // ]
+    }
   }
 }
 </script>

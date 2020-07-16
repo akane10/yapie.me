@@ -104,6 +104,11 @@
 <script>
 export default {
   name: 'LearningResources',
+  head() {
+    return {
+      title: '</Learning Resources>'
+    }
+  },
   computed: {
     allResources() {
       return this.$store.state.learningResources.allResources
