@@ -15,7 +15,7 @@
                 - Shikamaru Nara
               </h1>
               <div>
-                <img src="../static/naruto.png" />
+                <img width="200px" src="../static/naruto.png" />
               </div>
               <div>
                 <marquee class="has-text-warning"
