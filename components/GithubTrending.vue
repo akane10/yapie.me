@@ -153,35 +153,33 @@ export default {
     }
   },
   mounted() {
-    this.fetchTrending(this.since)
+    const fetchSince = this.fetchTrending(this.since)
+    fetchSince('javascript')
+    fetchSince('haskell')
+    fetchSince('rust')
   },
   methods: {
     changeSince() {
-      this.fetchTrending(this.since)
+      const fetchSince = this.fetchTrending(this.since)
+      fetchSince('javascript')
+      fetchSince('haskell')
+      fetchSince('rust')
     },
-    async fetchTrending(since = 'daily') {
-      try {
-        this.isFetching = true
-        const baseUrl = `https://github-trending-api.now.sh/repositories?since=${since}&spoken_language_code=en`
-        const haskellUrl = `${baseUrl}&language=haskell`
-        const javascriptUrl = `${baseUrl}&language=javascript`
-        const rustUrl = `${baseUrl}?&language=rust`
-        const [resHaskell, resJavascript, resRust] = await Promise.all([
-          fetch(haskellUrl),
-          fetch(javascriptUrl),
-          fetch(rustUrl)
-        ])
-        const [haskell, javascript, rust] = await Promise.all([
-          resHaskell.json(),
-          resJavascript.json(),
-          resRust.json()
-        ])
-        this.haskell = haskell.slice(0, 3)
-        this.javascript = javascript.slice(0, 3)
-        this.rust = rust.slice(0, 3)
-        this.isFetching = false
-      } catch (e) {
-        // console.error(e)
+    fetchTrending(since = 'daily') {
+      return async (language) => {
+        try {
+          this.isFetching = true
+          const baseUrl = `https://github-trending-api.now.sh/repositories?since=${since}&spoken_language_code=en`
+          const url = `${baseUrl}&language=${language}`
+
+          const res = await fetch(url)
+          const data = await res.json()
+
+          this[language] = data.slice(0, 3)
+          this.isFetching = false
+        } catch (e) {
+          this.isFetching = false
+        }
       }
     }
   }
