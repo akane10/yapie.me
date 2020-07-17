@@ -20,7 +20,7 @@ export default {
           'yapie, rosyadie, developer, learning, resources, development, software'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }]
   },
   /*
    ** Customize the progress-bar color
