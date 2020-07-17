@@ -39,17 +39,22 @@
               :key="i"
               class="tile is-child box has-background-warning"
             >
-              <div class="title" style="margin-bottom:10px;font-size:1rem">
-                {{ data.name }}
-              </div>
-              <div style="margin-bottom:10px;font-size:1rem">
-                {{ data.description }}
-              </div>
-              <div class="tags is-centered">
-                <div class="tag is-black">
-                  <span>{{ data.language }}</span>
+              <a :href="data.url" target="_blank">
+                <div class="title" style="margin-bottom:10px;font-size:1rem">
+                  {{ data.name }}
                 </div>
-              </div>
+                <div
+                  class="has-text-dark"
+                  style="margin-bottom:10px;font-size:1rem"
+                >
+                  {{ data.description }}
+                </div>
+                <div class="tags is-centered">
+                  <div class="tag is-black">
+                    <span>{{ data.language }}</span>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -68,17 +73,22 @@
               :key="i"
               class="tile is-child box has-background-warning"
             >
-              <div class="title" style="margin-bottom:10px;font-size:1rem">
-                {{ data.name }}
-              </div>
-              <div style="margin-bottom:10px;font-size:1rem">
-                {{ data.description }}
-              </div>
-              <div class="tags is-centered">
-                <div class="tag is-black">
-                  <span>{{ data.language }}</span>
+              <a :href="data.url" target="_blank">
+                <div class="title" style="margin-bottom:10px;font-size:1rem">
+                  {{ data.name }}
                 </div>
-              </div>
+                <div
+                  class="has-text-dark"
+                  style="margin-bottom:10px;font-size:1rem"
+                >
+                  {{ data.description }}
+                </div>
+                <div class="tags is-centered">
+                  <div class="tag is-black">
+                    <span>{{ data.language }}</span>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -97,17 +107,22 @@
               :key="i"
               class="tile is-child box has-background-warning"
             >
-              <div class="title" style="margin-bottom:10px;font-size:1rem">
-                {{ data.name }}
-              </div>
-              <div style="margin-bottom:10px;font-size:1rem">
-                {{ data.description }}
-              </div>
-              <div class="tags is-centered">
-                <div class="tag is-black">
-                  <span>{{ data.language }}</span>
+              <a :href="data.url" target="_blank">
+                <div class="title" style="margin-bottom:10px;font-size:1rem">
+                  {{ data.name }}
                 </div>
-              </div>
+                <div
+                  class="has-text-dark"
+                  style="margin-bottom:10px;font-size:1rem"
+                >
+                  {{ data.description }}
+                </div>
+                <div class="tags is-centered">
+                  <div class="tag is-black">
+                    <span>{{ data.language }}</span>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>

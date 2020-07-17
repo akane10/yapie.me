@@ -26,23 +26,23 @@
                 :key="resource.id"
                 class="tile is-child box has-background-warning"
               >
-                <span :to="resource.link">
+                <a :href="resource.link" target="_blank">
                   <div class="title" style="margin-bottom:10px">
                     {{ resource.name }}
                   </div>
-                </span>
-                <div style="margin-bottom:10px;">
-                  {{ resource.description }}
-                </div>
-                <div class="tags is-centered">
-                  <div
-                    v-for="(tag, i) in resource.tags"
-                    :key="i"
-                    class="tag is-black"
-                  >
-                    <span> {{ tag }}</span>
+                  <div class="has-text-dark" style="margin-bottom:10px;">
+                    {{ resource.description }}
                   </div>
-                </div>
+                  <div class="tags is-centered">
+                    <div
+                      v-for="(tag, i) in resource.tags"
+                      :key="i"
+                      class="tag is-black"
+                    >
+                      <span> {{ tag }}</span>
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
