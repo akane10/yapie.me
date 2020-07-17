@@ -49,6 +49,7 @@ export default {
     'nuxt-buefy',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/pwa',
     [
       'nuxt-fontawesome',
       {
