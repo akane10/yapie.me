@@ -32,7 +32,16 @@ export default {
   name: 'About',
   head() {
     return {
-      title: '</About>'
+      title: '</About>',
+      meta: [
+        {
+          hid: 'og-about',
+          property: 'og:about',
+          name: 'about',
+          content: 'Yapie Rosyadie'
+        }
+        // other meta
+      ]
     }
   }
 }

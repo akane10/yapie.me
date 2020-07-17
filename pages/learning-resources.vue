@@ -106,7 +106,17 @@ export default {
   name: 'LearningResources',
   head() {
     return {
-      title: '</Learning Resources>'
+      title: '</Learning Resources>',
+      meta: [
+        {
+          hid: 'learning resource',
+          property: 'learning resource',
+          name: 'learning resource',
+          content:
+            'Free learning resource about programming and computer science'
+        }
+        // other meta
+      ]
     }
   },
   computed: {

@@ -69,15 +69,16 @@ export default {
   },
   head() {
     return {
-      title: '</Home>'
-      // meta: [
-      //   {
-      //     hid: 'og-title',
-      //     property: 'og:title',
-      //     content: this.carDetails.title
-      //   }
-      //   // other meta
-      // ]
+      title: '</Home>',
+      meta: [
+        {
+          hid: 'og-title',
+          property: 'og:title',
+          name: 'home',
+          content: 'Github Trending'
+        }
+        // other meta
+      ]
     }
   }
 }
