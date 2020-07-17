@@ -39,6 +39,11 @@ export default {
           property: 'og:about',
           name: 'about',
           content: 'Yapie Rosyadie'
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'yapie, rosyadie, about'
         }
         // other meta
       ]

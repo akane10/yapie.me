@@ -12,6 +12,12 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || 'Yapie personal website'
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content:
+          'yapie, rosyadie, developer, learning, resources, development, software'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]

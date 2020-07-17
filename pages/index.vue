@@ -76,8 +76,12 @@ export default {
           property: 'og:title',
           name: 'home',
           content: 'Github Trending'
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'github, trending, javascript, haskell, rust'
         }
-        // other meta
       ]
     }
   }

@@ -114,8 +114,13 @@ export default {
           name: 'learning resource',
           content:
             'Free learning resource about programming and computer science'
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content:
+            'free, learning, resource, programming, computer science, youtube, ebook'
         }
-        // other meta
       ]
     }
   },
