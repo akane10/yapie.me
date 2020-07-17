@@ -1,5 +1,5 @@
 <template>
-  <div v-show="javascript.length !== 0" class="container">
+  <div class="container">
     <h3
       class="has-text-centered title has-text-warning"
       style="margin-bottom:5px"
