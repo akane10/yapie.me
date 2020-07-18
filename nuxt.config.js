@@ -4,6 +4,7 @@ export default {
    ** Headers of the page
    */
   head: {
+    titleTemplate: '%s - Yapie Rosyadie',
     title: process.env.npm_package_name || 'yapie',
     meta: [
       { charset: 'utf-8' },
