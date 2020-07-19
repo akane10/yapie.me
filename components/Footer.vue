@@ -5,6 +5,9 @@
         <a href="https://github.com/akane10" target="_blank" class="sm">
           <fa :icon="faGithub" />
         </a>
+        <a href="https://gitlab.com/akane10" target="_blank" class="sm">
+          <fa :icon="faGitlab" />
+        </a>
         <a href="https://twitter.com/akane10_" target="_blank" class="sm">
           <fa :icon="faTwitter" />
         </a>
@@ -26,6 +29,7 @@
 <script>
 import {
   faGithub,
+  faGitlab,
   faTwitter,
   faLinkedin
 } from '@fortawesome/free-brands-svg-icons'
@@ -34,6 +38,9 @@ export default {
   computed: {
     faGithub() {
       return faGithub
+    },
+    faGitlab() {
+      return faGitlab
     },
     faTwitter() {
       return faTwitter
