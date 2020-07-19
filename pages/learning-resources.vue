@@ -104,6 +104,7 @@
 <script>
 export default {
   name: 'LearningResources',
+  layout: 'main',
   head() {
     return {
       title: '</Learning Resources>',

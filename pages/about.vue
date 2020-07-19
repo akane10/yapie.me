@@ -30,6 +30,7 @@
 <script>
 export default {
   name: 'About',
+  layout: 'main',
   head() {
     return {
       title: '</About>',
