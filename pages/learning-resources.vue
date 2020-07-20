@@ -50,7 +50,12 @@
         <div class="column">
           <!-- Tags -->
           <div class="columns is-centered">
-            <div class="column is-8-desktop">
+            <div class="column is-8-desktop" style="padding-top:0">
+              <p class="has-text-warning has-text-centered is-size-5">
+                All Resources: {{ allResources.length }} | Selected:
+                {{ resources.length }}
+              </p>
+
               <!-- Filter by title -->
               <div class="field">
                 <div class="control">
