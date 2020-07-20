@@ -300,14 +300,14 @@ export const data = [
     description:
       'Carefully curated content to help you ace your next technical interview, with a focus on algorithms. System design questions are in-progress.',
     link: 'https://github.com/yangshun/tech-interview-handbook',
-    tags: ['book']
+    tags: ['book', 'algorithms']
   },
   {
     name: 'Fucking Algorithm',
     description:
       'These articles go over different kinds of Algorithmic Thinking. All are based on LeetCode problems. They are not only the solution code for the problem, but also WHY the solution works and HOW we can figure it out.',
     link: 'https://github.com/labuladong/fucking-algorithm/tree/english',
-    tags: ['article', 'computer science']
+    tags: ['article', 'computer science', 'algorithms']
   },
   {
     name: 'Project Based Learning',
