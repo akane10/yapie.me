@@ -315,6 +315,13 @@ export const data = [
       'A list of programming tutorials in which learners build an application from scratch. These tutorials are divided into different primary programming languages. Some have intermixed technologies and languages.',
     link: 'https://github.com/tuvtran/project-based-learning',
     tags: ['project']
+  },
+  {
+    name: 'Why Haskell Matters',
+    description:
+      "Haskell doesn't solve different problems than other languages. But it solves them differently. --unknown",
+    link: 'https://github.com/thma/WhyHaskellMatters',
+    tags: ['haskell', 'book']
   }
 ]
 
