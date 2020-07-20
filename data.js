@@ -280,6 +280,13 @@ export const data = [
     link:
       'https://github.com/JasonShin/fp-core.rs#functional-programming-jargon-in-rust',
     tags: ['functional programming', 'rust']
+  },
+  {
+    name: 'Software Design and Architecture in Haskell',
+    description:
+      'A structured set of materials on how to build real-world applications in Haskell.',
+    link: 'https://github.com/graninas/software-design-in-haskell',
+    tags: ['functional programming', 'haskell']
   }
 ]
 
