@@ -280,6 +280,41 @@ export const data = [
     link:
       'https://github.com/JasonShin/fp-core.rs#functional-programming-jargon-in-rust',
     tags: ['functional programming', 'rust']
+  },
+  {
+    name: "pretzelhammer's Rust blog",
+    description:
+      'Educational content for Rust beginners and Rust advanced beginners.',
+    link: 'https://github.com/pretzelhammer/rust-blog',
+    tags: ['rust']
+  },
+  {
+    name: 'App Ideas Collection',
+    description:
+      "Have you ever wanted to build something but you had no idea what to do? Just as authors sometimes have 'writers block' it's also true for developers. This list is intended to solve this issue once and for all!",
+    link: 'https://github.com/florinpop17/app-ideas',
+    tags: ['project']
+  },
+  {
+    name: 'Tech Interview Handbook',
+    description:
+      'Carefully curated content to help you ace your next technical interview, with a focus on algorithms. System design questions are in-progress.',
+    link: 'https://github.com/yangshun/tech-interview-handbook',
+    tags: ['book']
+  },
+  {
+    name: 'Fucking Algorithm',
+    description:
+      'These articles go over different kinds of Algorithmic Thinking. All are based on LeetCode problems. They are not only the solution code for the problem, but also WHY the solution works and HOW we can figure it out.',
+    link: 'https://github.com/labuladong/fucking-algorithm/tree/english',
+    tags: ['article', 'computer science']
+  },
+  {
+    name: 'Project Based Learning',
+    description:
+      'A list of programming tutorials in which learners build an application from scratch. These tutorials are divided into different primary programming languages. Some have intermixed technologies and languages.',
+    link: 'https://github.com/tuvtran/project-based-learning',
+    tags: ['project']
   }
 ]
 
