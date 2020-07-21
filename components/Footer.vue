@@ -2,25 +2,37 @@
   <footer class="footer">
     <div class="content has-text-centered">
       <div>
-        <a href="https://github.com/akane10" target="_blank" class="sm">
+        <a
+          href="https://github.com/akane10"
+          target="_blank"
+          class="sm has-text-light"
+        >
           <fa :icon="faGithub" />
         </a>
-        <a href="https://gitlab.com/akane10" target="_blank" class="sm">
+        <a
+          href="https://gitlab.com/akane10"
+          target="_blank"
+          class="sm has-text-light"
+        >
           <fa :icon="faGitlab" />
         </a>
-        <a href="https://twitter.com/akane10_" target="_blank" class="sm">
+        <a
+          href="https://twitter.com/akane10_"
+          target="_blank"
+          class="sm has-text-light"
+        >
           <fa :icon="faTwitter" />
         </a>
         <a
           href="https://www.linkedin.com/in/yapie-rosyadie"
           target="_blank"
-          class="sm"
+          class="sm has-text-light"
         >
           <fa :icon="faLinkedin" />
         </a>
       </div>
       <div class="block">
-        <h4 class="has-text-light">Yapie Rosyadie</h4>
+        <h4 class="has-text-light has-text-warning">Yapie Rosyadie</h4>
       </div>
     </div>
   </footer>
@@ -59,6 +71,6 @@ export default {
 .sm {
   margin: 10px;
   font-size: 26px;
-  color: hsl(48, 100%, 60%);
+  /* color: hsl(48, 100%, 60%); */
 }
 </style>
