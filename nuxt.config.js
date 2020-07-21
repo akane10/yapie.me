@@ -73,6 +73,21 @@ export default {
       }
     ]
   ],
+  workbox: {
+    runtimeCaching: [
+      {
+        // Should be a regex string. Compiles into new RegExp('https://my-cdn.com/.*')
+        urlPattern: 'https://cdn.materialdesignicons.com/.*'
+        // Defaults to `networkFirst` if omitted
+        // handler: 'networkFirst',
+        // Defaults to `GET` if omitted
+        // method: 'GET'
+      },
+      {
+        urlPattern: 'https://platform.twitter.com/.*'
+      }
+    ]
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
