@@ -50,7 +50,7 @@
         <div class="column">
           <!-- Tags -->
           <div class="columns is-centered">
-            <div class="column is-8-desktop" style="padding-top:0">
+            <div class="column is-8-desktop">
               <p class="has-text-warning has-text-centered is-size-5">
                 All Resources: {{ allResources.length }} | Selected:
                 {{ resources.length }}
