@@ -77,14 +77,29 @@ export default {
     runtimeCaching: [
       {
         // Should be a regex string. Compiles into new RegExp('https://my-cdn.com/.*')
-        urlPattern: 'https://cdn.materialdesignicons.com/*'
+        urlPattern: 'https://cdn.materialdesignicons.com/*',
         // Defaults to `networkFirst` if omitted
         // handler: 'networkFirst',
         // Defaults to `GET` if omitted
         // method: 'GET'
+        strategyOptions: {
+          cacheName: 'our-cache',
+          cacheExpiration: {
+            maxEntries: 10,
+            maxAgeSeconds: 300
+          }
+        }
       },
       {
-        urlPattern: 'https://platform.twitter.com/*'
+        urlPattern: 'https://platform.twitter.com/*',
+        handler: 'StaleWhileRevalidate',
+        strategyOptions: {
+          cacheName: 'our-cache',
+          cacheExpiration: {
+            maxEntries: 10,
+            maxAgeSeconds: 300
+          }
+        }
       }
     ]
   },
