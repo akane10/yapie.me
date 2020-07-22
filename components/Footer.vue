@@ -5,34 +5,34 @@
         <a
           href="https://github.com/akane10"
           target="_blank"
-          class="sm has-text-light"
+          class="sm has-text-success"
         >
           <fa :icon="faGithub" />
         </a>
         <a
           href="https://gitlab.com/akane10"
           target="_blank"
-          class="sm has-text-light"
+          class="sm has-text-success"
         >
           <fa :icon="faGitlab" />
         </a>
         <a
           href="https://twitter.com/akane10_"
           target="_blank"
-          class="sm has-text-light"
+          class="sm has-text-success"
         >
           <fa :icon="faTwitter" />
         </a>
         <a
           href="https://www.linkedin.com/in/yapie-rosyadie"
           target="_blank"
-          class="sm has-text-light"
+          class="sm has-text-success"
         >
           <fa :icon="faLinkedin" />
         </a>
       </div>
       <div class="block">
-        <h4 class="has-text-light has-text-warning">Yapie Rosyadie</h4>
+        <h4 class="has-text-warning">Yapie Rosyadie</h4>
       </div>
     </div>
   </footer>

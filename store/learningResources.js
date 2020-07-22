@@ -1,7 +1,7 @@
 import { data } from '../data'
 
 export const state = () => ({
-  allResources: [...data.reverse()],
+  allResources: [...data].reverse(),
   resources: [],
   tags: []
 })
