@@ -322,6 +322,12 @@ export const data = [
       "Haskell doesn't solve different problems than other languages. But it solves them differently. --unknown",
     link: 'https://github.com/thma/WhyHaskellMatters',
     tags: ['haskell', 'book']
+  },
+  {
+    name: 'Rust Module System',
+    description: 'Clear explanation of Rust’s module system',
+    link: 'http://www.sheshbabu.com/posts/rust-module-system/',
+    tags: ['rust', 'article']
   }
 ]
 
