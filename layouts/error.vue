@@ -5,7 +5,7 @@
         <h1 v-if="error.statusCode === 404" class="title has-text-warning">
           &lt;Not Found/&gt;
         </h1>
-        <h1 v-else>An error occurred</h1>
+        <h1 v-else class="title has-text-warning">An error occurred</h1>
 
         <h1 class="title has-text-warning">¯\_(ツ)_/¯</h1>
       </div>
