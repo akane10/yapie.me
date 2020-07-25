@@ -39,7 +39,7 @@
               :key="i"
               class="tile is-child box has-background-warning"
             >
-              <a :href="data.url" rel="noreferrer" target="_blank">
+              <a :href="data.url" rel="noreferrer dns-prefetch" target="_blank">
                 <div class="title" style="margin-bottom:10px;font-size:1rem">
                   {{ data.name }}
                 </div>
@@ -73,7 +73,7 @@
               :key="i"
               class="tile is-child box has-background-warning"
             >
-              <a :href="data.url" rel="noreferrer" target="_blank">
+              <a :href="data.url" rel="noreferrer dns-prefetch" target="_blank">
                 <div class="title" style="margin-bottom:10px;font-size:1rem">
                   {{ data.name }}
                 </div>
@@ -107,7 +107,7 @@
               :key="i"
               class="tile is-child box has-background-warning"
             >
-              <a :href="data.url" rel="noreferrer" target="_blank">
+              <a :href="data.url" rel="noreferrer dns-prefetch" target="_blank">
                 <div class="title" style="margin-bottom:10px;font-size:1rem">
                   {{ data.name }}
                 </div>
