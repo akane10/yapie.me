@@ -103,6 +103,11 @@ export default {
           }
         }
       ]
+    },
+    manifest: {
+      name: 'Yapie',
+      display: 'standalone',
+      background_color: '#FFFF00'
     }
   },
 
