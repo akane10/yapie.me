@@ -49,6 +49,7 @@ import {
   faTwitter,
   faLinkedin
 } from '@fortawesome/free-brands-svg-icons'
+
 export default {
   name: 'Footer',
   computed: {

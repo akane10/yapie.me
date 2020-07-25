@@ -82,13 +82,11 @@
 
 <script>
 import { faLaughWink, faCode, faHome } from '@fortawesome/free-solid-svg-icons'
-import navbar from '../components/Navbar'
-import thefooter from '../components/Footer'
 
 export default {
   components: {
-    navbar,
-    thefooter
+    navbar: () => import('../components/Navbar'),
+    thefooter: () => import('../components/Footer')
   },
   data() {
     return {}

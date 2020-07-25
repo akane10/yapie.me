@@ -60,12 +60,12 @@
 
 <script>
 import { Tweet } from 'vue-tweet-embed'
-import GithubTrending from '../components/GithubTrending'
+
 export default {
   name: 'Index',
   layout: 'main',
   components: {
-    GithubTrending,
+    GithubTrending: () => import('../components/GithubTrending'),
     Tweet
   },
   head() {
