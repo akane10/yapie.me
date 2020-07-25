@@ -74,6 +74,21 @@ export default {
     ]
   ],
   pwa: {
+    manifest: {
+      name: 'Yapie',
+      short_name: 'Yapie',
+      display: 'standalone',
+      background_color: '#FFFF00',
+      theme_color: '#FFFF00',
+      description: 'Personal Website'
+      // icons: [
+      //   {
+      //     src: '/icon.png',
+      //     sizes: '192x192',
+      //     type: 'image/png'
+      //   }
+      // ]
+    },
     workbox: {
       runtimeCaching: [
         {
@@ -103,11 +118,6 @@ export default {
           }
         }
       ]
-    },
-    manifest: {
-      name: 'Yapie',
-      display: 'standalone',
-      background_color: '#FFFF00'
     }
   },
 
