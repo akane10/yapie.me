@@ -9,7 +9,7 @@
           </fa-layers>
         </span>
       </nuxt-link>
-      <a
+      <!-- <a
         @click="showNav = !showNav"
         :class="{ 'is-active': showNav }"
         role="button"
@@ -21,7 +21,7 @@
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
-      </a>
+      </a> -->
     </div>
 
     <div

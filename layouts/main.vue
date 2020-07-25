@@ -6,11 +6,66 @@
         <div class="Site-content">
           <div>
             <nav
-              class="navbar is-fixed-top is-black"
+              class="navbar is-fixed-top is-black is-hidden-touch"
               role="navigation"
               aria-label="main navigation"
             >
               <navbar />
+            </nav>
+
+            <nav
+              class="navbar is-fixed-bottom is-black is-hidden-desktop"
+              role="navigation"
+              aria-label="main navigation"
+            >
+              <div
+                class="navbar-menu is-active has-background-black"
+                style="margin-bottom:0"
+              >
+                <!-- shown on mobile -->
+                <nav class="level is-mobile columns is-centered">
+                  <div class="level-item has-text-centered field column">
+                    <div>
+                      <nuxt-link
+                        to="/about"
+                        class="button is-warning is-outlined"
+                      >
+                        <span class="icon fa-4x">
+                          <fa :icon="faLaughWink" />
+                        </span>
+                      </nuxt-link>
+                      <div class="is-size-7 has-text-warning">About</div>
+                    </div>
+                  </div>
+
+                  <div class="level-item has-text-centered field column">
+                    <div>
+                      <nuxt-link to="/" class="button is-warning is-outlined">
+                        <span class="icon  fa-4x">
+                          <fa :icon="faHome" />
+                        </span>
+                      </nuxt-link>
+                      <div class="is-size-7 has-text-warning">Home</div>
+                    </div>
+                  </div>
+
+                  <div class="level-item has-text-centered field column">
+                    <div>
+                      <nuxt-link
+                        to="/learning-resources"
+                        class="button is-warning is-outlined"
+                      >
+                        <span class="icon fa-4x">
+                          <fa :icon="faCode" />
+                        </span>
+                      </nuxt-link>
+                      <div class="is-size-7 has-text-warning">
+                        Learning Resources
+                      </div>
+                    </div>
+                  </div>
+                </nav>
+              </div>
             </nav>
           </div>
 
@@ -26,8 +81,10 @@
 </template>
 
 <script>
+import { faLaughWink, faCode, faHome } from '@fortawesome/free-solid-svg-icons'
 import navbar from '../components/Navbar'
 import thefooter from '../components/Footer'
+
 export default {
   components: {
     navbar,
@@ -35,6 +92,17 @@ export default {
   },
   data() {
     return {}
+  },
+  computed: {
+    faLaughWink() {
+      return faLaughWink
+    },
+    faCode() {
+      return faCode
+    },
+    faHome() {
+      return faHome
+    }
   }
 }
 </script>
