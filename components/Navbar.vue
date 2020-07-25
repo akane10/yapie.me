@@ -51,10 +51,7 @@ import { faLaughWink, faCode, faHome } from '@fortawesome/free-solid-svg-icons'
 export default {
   name: 'Navbar',
   data() {
-    return {
-      showNav: false,
-      onHover: false
-    }
+    return {}
   },
   computed: {
     faLaughWink() {
