@@ -9,26 +9,9 @@
           </fa-layers>
         </span>
       </nuxt-link>
-      <!-- <a
-        @click="showNav = !showNav"
-        :class="{ 'is-active': showNav }"
-        role="button"
-        data-target="navMenu"
-        aria-label="menu"
-        aria-expanded="false"
-        class="navbar-burger has-text-warning"
-      >
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a> -->
     </div>
 
-    <div
-      id="navMenu"
-      :class="{ 'is-active': showNav, 'has-background-black-bis': showNav }"
-      class="navbar-menu"
-    >
+    <div id="navMenu" class="navbar-menu">
       <!-- Navbar End -->
       <div class="navbar-end">
         <span class="navbar-item">
