@@ -75,7 +75,7 @@ export default {
   ],
   pwa: {
     manifest: {
-      name: 'Yapie',
+      name: 'Yapie Rosyadie',
       short_name: 'Yapie',
       display: 'standalone',
       background_color: '#FFFF00',
