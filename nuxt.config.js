@@ -80,14 +80,14 @@ export default {
       display: 'standalone',
       background_color: '#FFFF00',
       theme_color: '#FFFF00',
-      description: 'Personal Website'
-      // icons: [
-      //   {
-      //     src: '/icon.png',
-      //     sizes: '192x192',
-      //     type: 'image/png'
-      //   }
-      // ]
+      description: 'Personal Website',
+      icons: [
+        {
+          src: '/icon.png',
+          sizes: '192x192',
+          type: 'image/png'
+        }
+      ]
     },
     workbox: {
       runtimeCaching: [
