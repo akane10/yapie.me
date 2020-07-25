@@ -30,8 +30,8 @@
                         to="/about"
                         class="button is-warning is-outlined"
                       >
-                        <span class="icon fa-4x">
-                          <fa :icon="faLaughWink" />
+                        <span class="icon" style="padding:0 30px 0 30px">
+                          <fa :icon="faLaughWink" style="font-size:30px" />
                         </span>
                       </nuxt-link>
                       <div class="is-size-7 has-text-warning">About</div>
@@ -41,8 +41,8 @@
                   <div class="level-item has-text-centered field column">
                     <div>
                       <nuxt-link to="/" class="button is-warning is-outlined">
-                        <span class="icon  fa-4x">
-                          <fa :icon="faHome" />
+                        <span class="icon" style="padding:0 30px 0 30px">
+                          <fa :icon="faHome" style="font-size:30px" />
                         </span>
                       </nuxt-link>
                       <div class="is-size-7 has-text-warning">Home</div>
@@ -55,8 +55,8 @@
                         to="/learning-resources"
                         class="button is-warning is-outlined"
                       >
-                        <span class="icon fa-4x">
-                          <fa :icon="faCode" />
+                        <span class="icon" style="padding:0 30px 0 30px">
+                          <fa :icon="faCode" style="font-size:30px" />
                         </span>
                       </nuxt-link>
                       <div class="is-size-7 has-text-warning">
