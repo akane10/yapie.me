@@ -26,7 +26,7 @@
                 :key="resource.id"
                 class="tile is-child box has-background-warning"
               >
-                <a :href="resource.link" target="_blank">
+                <a :href="resource.link" rel="noreferrer" target="_blank">
                   <div class="title" style="margin-bottom:10px">
                     {{ resource.name }}
                   </div>

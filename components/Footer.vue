@@ -3,6 +3,7 @@
     <div class="content has-text-centered">
       <div>
         <a
+          rel="noreferrer"
           href="https://github.com/akane10"
           target="_blank"
           class="sm has-text-success"
@@ -10,6 +11,7 @@
           <fa :icon="faGithub" />
         </a>
         <a
+          rel="noreferrer"
           href="https://gitlab.com/akane10"
           target="_blank"
           class="sm has-text-success"
@@ -17,6 +19,7 @@
           <fa :icon="faGitlab" />
         </a>
         <a
+          rel="noreferrer"
           href="https://twitter.com/akane10_"
           target="_blank"
           class="sm has-text-success"
@@ -24,6 +27,7 @@
           <fa :icon="faTwitter" />
         </a>
         <a
+          rel="noreferrer"
           href="https://www.linkedin.com/in/yapie-rosyadie"
           target="_blank"
           class="sm has-text-success"
