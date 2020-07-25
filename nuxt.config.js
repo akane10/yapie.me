@@ -81,6 +81,7 @@ export default {
       background_color: '#FFFF00',
       theme_color: '#FFFF00',
       description: 'Personal Website',
+      start_url: 'https://yapie.me',
       icons: [
         {
           src: '/icon.png',
