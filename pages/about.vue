@@ -3,7 +3,7 @@
     <section class="section" style="padding-bottom:20px">
       <div class="container">
         <div style="margin-top:30px;" class="has-text-centered">
-          <h1 class="title has-text-warning">&lt;Yapie Rosyadie/&gt;</h1>
+          <h1 class="title has-text-warning">&lt;/Yapie Rosyadie&gt;</h1>
         </div>
       </div>
     </section>

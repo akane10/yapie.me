@@ -7,7 +7,7 @@
           class="has-text-centered has-text-warning"
         >
           <h1 class="title has-text-warning">
-            &lt;Learning Resources/&gt;
+            &lt;/Learning Resources&gt;
           </h1>
           <p style="font-size:20px; margin-top:30px">
             Free learning resource about programming and computer science
