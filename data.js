@@ -328,6 +328,24 @@ export const data = [
     description: 'Clear explanation of Rust’s module system',
     link: 'http://www.sheshbabu.com/posts/rust-module-system/',
     tags: ['rust', 'article']
+  },
+  {
+    name: 'freeCodeCamp',
+    description: 'freeCodeCamp.org\'s open source codebase and curriculum. Learn to code at home.'
+    link: 'https://www.freecodecamp.org/',
+    tags: ['platform']
+  },
+  {
+    name: 'codewars',
+    description: 'Codewars is where developers achieve code mastery through challenge. Train on kata in the dojo and reach your highest potential.',
+    link: 'https://www.codewars.com/',
+    tags: ['platform']
+  },
+  {
+    name: 'exercism',
+    description: 'Code Practice and Mentorship for Everyone.',
+    link: 'https://exercism.io/',
+    tags: ['platform']
   }
 ]
 
