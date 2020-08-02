@@ -10,13 +10,30 @@
         <h1 class="title has-text-warning">¯\_(ツ)_/¯</h1>
       </div>
       <div class="has-text-centered" style="margin-top:30px">
-        <a href="/">
-          <img
-            style="width:300px"
-            src="../static/keep-calm-and-walk-on-home-boy-2.png"
-            alt="image"
-          />
-        </a>
+        <img style="width:100px" src="../static/pantera.jpg" alt="image" />
+        <div
+          class="title has-text-centered has-text-warning is-marginless is-size-2"
+        >
+          Keep
+        </div>
+        <div
+          class="title has-text-centered has-text-warning is-marginless is-size-2"
+        >
+          Calm
+        </div>
+        <div class="title has-text-centered has-text-warning is-marginless">
+          And
+        </div>
+        <div
+          class="title has-text-centered has-text-warning is-marginless is-size-2"
+        >
+          Walk On
+        </div>
+        <div
+          class="title has-text-centered has-text-warning is-marginless is-size-2"
+        >
+          <a href="/" class="has-text-light">Home</a>, Boy.
+        </div>
       </div>
     </div>
   </div>
