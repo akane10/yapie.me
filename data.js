@@ -331,7 +331,7 @@ export const data = [
   },
   {
     name: 'freeCodeCamp',
-    description: 'freeCodeCamp.org\'s open source codebase and curriculum. Learn to code at home.'
+    description: 'freeCodeCamp.org\'s open source codebase and curriculum. Learn to code at home.',
     link: 'https://www.freecodecamp.org/',
     tags: ['platform']
   },
