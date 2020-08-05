@@ -243,6 +243,12 @@ export const data = [
     tags: ['youtube', 'video']
   },
   {
+    name: 'Riccardo Odone',
+    description: 'Riccardo Odone',
+    link: 'https://www.youtube.com/user/blackschneider',
+    tags: ['youtube', 'video']
+  },
+  {
     name: 'Low Level JavaScript',
     description: 'Also god',
     link: 'https://www.youtube.com/channel/UC56l7uZA209tlPTVOJiJ8Tw',
