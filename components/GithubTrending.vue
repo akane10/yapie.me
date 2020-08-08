@@ -12,7 +12,9 @@
           :class="{ 'is-loading': isFetching }"
           class="select is-warning is-small "
         >
+          <label for="since"></label>
           <select
+            id="since"
             v-model="since"
             @change="changeSince"
             class="has-background-black has-text-warning"
