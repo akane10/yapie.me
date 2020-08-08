@@ -12,17 +12,18 @@
           :class="{ 'is-loading': isFetching }"
           class="select is-warning is-small "
         >
-          <label for="since"></label>
-          <select
-            id="since"
-            v-model="since"
-            @change="changeSince"
-            class="has-background-black has-text-warning"
-          >
-            <option>daily</option>
-            <option>weekly</option>
-            <option>monthly</option>
-          </select>
+          <label for="since">
+            <select
+              id="since"
+              v-model="since"
+              @change="changeSince"
+              class="has-background-black has-text-warning"
+            >
+              <option>daily</option>
+              <option>weekly</option>
+              <option>monthly</option>
+            </select>
+          </label>
         </div>
       </div>
     </div>
