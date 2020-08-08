@@ -18,7 +18,11 @@
               Feeling lazy, might write about page later
             </p>
             <div style="margin-top:10px">
-              <img style="width:200px" src="../static/lazyCorgi.jpg" alt="" />
+              <img
+                style="width:200px"
+                src="../static/lazyCorgi.jpg"
+                alt="lazyCorgi image"
+              />
             </div>
           </div>
         </div>

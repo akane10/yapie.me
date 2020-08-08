@@ -10,7 +10,11 @@
         <h1 class="title has-text-warning">¯\_(ツ)_/¯</h1>
       </div>
       <div class="has-text-centered" style="margin-top:30px">
-        <img style="width:100px" src="../static/pantera.jpg" alt="image" />
+        <img
+          style="width:100px"
+          src="../static/pantera.jpg"
+          alt="pantera image"
+        />
         <div
           class="title has-text-centered has-text-warning is-marginless is-size-2"
         >
