@@ -79,8 +79,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.home {
-  font-size: 30px;
-}
-</style>
+<style scoped></style>
