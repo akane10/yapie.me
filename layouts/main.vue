@@ -27,8 +27,9 @@
                   <div class="level-item has-text-centered field column">
                     <div>
                       <nuxt-link
+                        :class="{ 'is-outlined': currentPath !== '/about' }"
                         to="/about"
-                        class="button is-warning is-outlined"
+                        class="button is-warning"
                       >
                         <span class="icon" style="padding:0 30px 0 30px">
                           <fa :icon="faLaughWink" style="font-size:30px" />
@@ -40,7 +41,11 @@
 
                   <div class="level-item has-text-centered field column">
                     <div>
-                      <nuxt-link to="/" class="button is-warning is-outlined">
+                      <nuxt-link
+                        :class="{ 'is-outlined': currentPath !== '/' }"
+                        to="/"
+                        class="button is-warning"
+                      >
                         <span class="icon" style="padding:0 30px 0 30px">
                           <fa :icon="faHome" style="font-size:30px" />
                         </span>
@@ -52,8 +57,11 @@
                   <div class="level-item has-text-centered field column">
                     <div>
                       <nuxt-link
+                        :class="{
+                          'is-outlined': currentPath !== '/learning-resources'
+                        }"
                         to="/learning-resources"
-                        class="button is-warning is-outlined"
+                        class="button is-warning"
                       >
                         <span class="icon" style="padding:0 30px 0 30px">
                           <fa :icon="faCode" style="font-size:30px" />
@@ -100,6 +108,9 @@ export default {
     },
     faHome() {
       return faHome
+    },
+    currentPath() {
+      return this.$nuxt.$route.path
     }
   }
 }

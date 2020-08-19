@@ -15,7 +15,11 @@
       <!-- Navbar End -->
       <div class="navbar-end">
         <span class="navbar-item">
-          <nuxt-link to="/" class="button is-warning is-outlined">
+          <nuxt-link
+            :class="{ 'is-outlined': currentPath !== '/' }"
+            to="/"
+            class="button is-warning"
+          >
             <span class="icon">
               <fa :icon="faHome" />
             </span>
@@ -23,7 +27,11 @@
           </nuxt-link>
         </span>
         <span class="navbar-item">
-          <nuxt-link to="/about" class="button is-warning is-outlined">
+          <nuxt-link
+            :class="{ 'is-outlined': currentPath !== '/about' }"
+            to="/about"
+            class="button is-warning"
+          >
             <span class="icon">
               <fa :icon="faLaughWink" />
             </span>
@@ -32,8 +40,9 @@
         </span>
         <span class="navbar-item">
           <nuxt-link
+            :class="{ 'is-outlined': currentPath !== '/learning-resources' }"
             to="/learning-resources"
-            class="button is-warning is-outlined"
+            class="button is-warning"
           >
             <span class="icon">
               <fa :icon="faCode" />
@@ -62,6 +71,9 @@ export default {
     },
     faHome() {
       return faHome
+    },
+    currentPath() {
+      return this.$nuxt.$route.path
     }
   }
 }
