@@ -36,17 +36,16 @@ export default {
       title: '</About>',
       meta: [
         {
-          hid: 'og-about',
-          property: 'og:about',
+          hid: 'og-title',
+          property: 'og:title',
           name: 'about',
-          content: 'Yapie Rosyadie'
+          content: '</About> - Yapie Rosyadie'
         },
         {
-          hid: 'keywords',
-          name: 'keywords',
-          content: 'yapie, rosyadie, about'
+          hid: 'og-type',
+          property: 'og:type',
+          content: 'website'
         }
-        // other meta
       ]
     }
   }

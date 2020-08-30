@@ -80,12 +80,12 @@ export default {
           hid: 'og-title',
           property: 'og:title',
           name: 'home',
-          content: 'Github Trending'
+          content: '</Home> - Yapie Rosyadie'
         },
         {
-          hid: 'keywords',
-          name: 'keywords',
-          content: 'github, trending, javascript, haskell, rust'
+          hid: 'og-type',
+          property: 'og:type',
+          content: 'website'
         }
       ]
     }

@@ -112,17 +112,15 @@ export default {
       title: '</Learning Resources>',
       meta: [
         {
-          hid: 'learning resource',
-          property: 'learning resource',
-          name: 'learning resource',
-          content:
-            'Free learning resource about programming and computer science'
+          hid: 'og-title',
+          property: 'og:title',
+          name: 'LearningResources',
+          content: '</Learning Resources> - Yapie Rosyadie'
         },
         {
-          hid: 'keywords',
-          name: 'keywords',
-          content:
-            'free, learning, resource, programming, computer science, youtube, ebook'
+          hid: 'og-type',
+          property: 'og:type',
+          content: 'website'
         }
       ]
     }
