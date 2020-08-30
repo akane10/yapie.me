@@ -2,21 +2,18 @@
   <div id="body">
     <section class="section">
       <div class="container">
-        <div
-          style="margin-top:30px;"
-          class="has-text-centered has-text-warning"
-        >
+        <div id="top" class="has-text-centered has-text-warning">
           <h1 class="title has-text-warning">
             &lt;/Learning Resources&gt;
           </h1>
-          <p style="font-size:20px; margin-top:30px">
+          <p id="des">
             Free learning resource about programming and computer science
           </p>
         </div>
       </div>
     </section>
 
-    <section class="section" style="margin-bottom:35px; padding-top:0;">
+    <section id="content-section" class="section">
       <div class="columns">
         <div class="column">
           <div class="tile is-ancestor columns is-centered has-text-centered">
@@ -27,10 +24,10 @@
                 class="tile is-child box has-background-warning"
               >
                 <a :href="resource.link" rel="noreferrer" target="_blank">
-                  <div class="title" style="margin-bottom:10px">
+                  <div class="title the-content">
                     {{ resource.name }}
                   </div>
-                  <div class="has-text-dark" style="margin-bottom:10px;">
+                  <div class="has-text-dark the-content">
                     {{ resource.description }}
                   </div>
                   <div class="tags is-centered">
@@ -188,5 +185,19 @@ export default {
     flex-direction: column-reverse;
     display: flex;
   }
+}
+#top {
+  margin-top: 30px;
+}
+#des {
+  font-size: 20px;
+  margin-top: 30px;
+}
+#content-section {
+  margin-bottom: 35px;
+  padding-top: 0;
+}
+#the-content {
+  margin-bottom: 10px;
 }
 </style>

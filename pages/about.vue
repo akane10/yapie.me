@@ -1,14 +1,14 @@
 <template>
   <div id="body">
-    <section class="section" style="padding-bottom:20px">
+    <section id="title-section" class="section">
       <div class="container">
-        <div style="margin-top:30px;" class="has-text-centered">
+        <div id="the-title" class="has-text-centered">
           <h1 class="title has-text-warning">&lt;/Yapie Rosyadie&gt;</h1>
         </div>
       </div>
     </section>
 
-    <section class="section" style="margin-bottom:40px; padding-top:0;">
+    <section id="content-section" class="section">
       <div class="container">
         <div class="columns is-centered">
           <div
@@ -17,12 +17,8 @@
             <p>
               Feeling lazy, might write about page later
             </p>
-            <div style="margin-top:10px">
-              <img
-                style="width:200px"
-                src="../static/lazyCorgi.jpg"
-                alt="lazyCorgi image"
-              />
+            <div id="image">
+              <img src="../static/lazyCorgi.jpg" alt="lazyCorgi image" />
             </div>
           </div>
         </div>
@@ -65,5 +61,18 @@ export default {
   #body {
     min-height: 0;
   }
+}
+#image {
+  margin-top: 10px;
+}
+#content-section {
+  margin-bottom: 40px;
+  padding-top: 0;
+}
+#the-title {
+  margin-top: 30px;
+}
+#title-section {
+  padding-bottom: 20px;
 }
 </style>

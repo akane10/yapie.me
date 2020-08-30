@@ -5,8 +5,8 @@
       <section class="section">
         <div class="columns">
           <!-- Home -->
-          <div class="column" style="padding-top:10%">
-            <div style="padding-bottom:20px" class="has-text-centered">
+          <div id="main" class="column">
+            <div id="top" class="has-text-centered">
               <h1 class="title has-text-warning is-marginless">
                 <q
                   >Laziness is the mother of all bad habits. But ultimately she
@@ -96,5 +96,11 @@ export default {
 <style scoped>
 #home {
   min-height: 100vh;
+}
+#main {
+  padding-top: 10%;
+}
+#top {
+  padding-bottom: 20px;
 }
 </style>

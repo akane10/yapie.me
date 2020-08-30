@@ -1,12 +1,9 @@
 <template>
   <div class="container">
-    <h3
-      class="has-text-centered title has-text-warning"
-      style="margin-bottom:5px"
-    >
+    <h3 id="title-github" class="has-text-centered title has-text-warning">
       Github Trending {{ what }}
     </h3>
-    <div class="field ">
+    <div class="field">
       <div class="control has-text-centered">
         <div
           :class="{ 'is-loading': isFetching }"
@@ -30,8 +27,8 @@
     <div class="columns is-centered is-multiline is-desktop">
       <div class="column">
         <h3
-          class="has-text-centered subtitle has-text-warning"
-          style="margin-bottom:0"
+          id="subtitle-github"
+          class="has-text-centered subtitle has-text-warning is-marginless"
         >
           Javascript
         </h3>
@@ -43,13 +40,10 @@
               class="tile is-child box has-background-warning"
             >
               <a :href="data.url" rel="noreferrer dns-prefetch" target="_blank">
-                <div class="title" style="margin-bottom:10px;font-size:1rem">
+                <div class="title content-github">
                   {{ data.name }}
                 </div>
-                <div
-                  class="has-text-dark"
-                  style="margin-bottom:10px;font-size:1rem"
-                >
+                <div class="has-text-dark content-github">
                   {{ data.description }}
                 </div>
                 <div class="tags is-centered">
@@ -63,10 +57,7 @@
         </div>
       </div>
       <div class="column">
-        <h3
-          class="has-text-centered subtitle has-text-warning"
-          style="margin-bottom:0"
-        >
+        <h3 class="has-text-centered subtitle has-text-warning is-marginless">
           Haskell
         </h3>
         <div class="tile is-ancestor columns is-centered has-text-centered">
@@ -77,13 +68,10 @@
               class="tile is-child box has-background-warning"
             >
               <a :href="data.url" rel="noreferrer dns-prefetch" target="_blank">
-                <div class="title" style="margin-bottom:10px;font-size:1rem">
+                <div class="title content-github">
                   {{ data.name }}
                 </div>
-                <div
-                  class="has-text-dark"
-                  style="margin-bottom:10px;font-size:1rem"
-                >
+                <div class="has-text-dark content-github">
                   {{ data.description }}
                 </div>
                 <div class="tags is-centered">
@@ -97,10 +85,7 @@
         </div>
       </div>
       <div class="column">
-        <h3
-          class="has-text-centered subtitle has-text-warning"
-          style="margin-bottom:0"
-        >
+        <h3 class="has-text-centered subtitle has-text-warning is-marginless">
           Rust
         </h3>
         <div class="tile is-ancestor columns is-centered has-text-centered">
@@ -111,13 +96,10 @@
               class="tile is-child box has-background-warning"
             >
               <a :href="data.url" rel="noreferrer dns-prefetch" target="_blank">
-                <div class="title" style="margin-bottom:10px;font-size:1rem">
+                <div class="title content-github">
                   {{ data.name }}
                 </div>
-                <div
-                  class="has-text-dark"
-                  style="margin-bottom:10px;font-size:1rem"
-                >
+                <div class="has-text-dark content-github">
                   {{ data.description }}
                 </div>
                 <div class="tags is-centered">
@@ -189,4 +171,13 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+#title-github {
+  margin-bottom: 5px;
+}
+
+.content-github {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+</style>

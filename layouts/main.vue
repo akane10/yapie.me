@@ -18,10 +18,7 @@
               role="navigation"
               aria-label="main navigation"
             >
-              <div
-                class="navbar-menu is-active has-background-black"
-                style="margin-bottom:0"
-              >
+              <div class="navbar-menu is-active has-background-black">
                 <!-- shown on mobile -->
                 <nav class="level is-mobile columns is-centered">
                   <div class="level-item has-text-centered field column">
@@ -31,8 +28,8 @@
                         to="/about"
                         class="button is-warning"
                       >
-                        <span class="icon" style="padding:0 30px 0 30px">
-                          <fa :icon="faLaughWink" style="font-size:30px" />
+                        <span class="icon icon-navbar">
+                          <fa :icon="faLaughWink" class="icon-icon" />
                         </span>
                       </nuxt-link>
                       <div class="is-size-7 has-text-warning">About</div>
@@ -46,8 +43,8 @@
                         to="/"
                         class="button is-warning"
                       >
-                        <span class="icon" style="padding:0 30px 0 30px">
-                          <fa :icon="faHome" style="font-size:30px" />
+                        <span class="icon icon-navbar">
+                          <fa :icon="faHome" class="icon-icon" />
                         </span>
                       </nuxt-link>
                       <div class="is-size-7 has-text-warning">Home</div>
@@ -63,8 +60,8 @@
                         to="/learning-resources"
                         class="button is-warning"
                       >
-                        <span class="icon" style="padding:0 30px 0 30px">
-                          <fa :icon="faCode" style="font-size:30px" />
+                        <span class="icon icon-navbar">
+                          <fa :icon="faCode" class="icon-icon" />
                         </span>
                       </nuxt-link>
                       <div class="is-size-7 has-text-warning">
@@ -131,5 +128,11 @@ body {
 .navbar {
   background-color: transparent;
   background-image: none;
+}
+.icon-icon {
+  font-size: 30px;
+}
+.icon-navbar {
+  padding: 0 30px 0 30px;
 }
 </style>
