@@ -195,7 +195,7 @@ export default {
   margin-bottom: 35px;
   padding-top: 0;
 }
-#the-content {
-  margin-bottom: 10px;
+.the-content {
+  margin-bottom: 7px;
 }
 </style>
