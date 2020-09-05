@@ -1,4 +1,5 @@
 <template>
+  <!-- https://icons8.com/cssload/en/spinners -->
   <div class="overlay-loader">
     <div class="loader">
       <div></div>
