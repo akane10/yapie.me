@@ -34,11 +34,11 @@
 
           <!-- Tweets -->
           <div class="column is-5-tablet is-4-desktop">
-            <Tweet
+            <!-- <Tweet
               id="1005810974241067008"
               :options="{ theme: 'dark', align: 'center' }"
             >
-            </Tweet>
+            </Tweet> -->
             <Tweet
               id="1182672851532423172"
               :options="{
