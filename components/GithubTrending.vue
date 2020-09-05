@@ -33,8 +33,15 @@
           Javascript
         </h3>
         <div class="tile is-ancestor columns is-centered has-text-centered">
-          <div class="tile column is-vertical is-parent ">
+          <div class="tile column is-vertical is-parent">
             <div
+              v-if="javascript.length == 0"
+              class="tile is-child box has-background-warning"
+            >
+              <Loading />
+            </div>
+            <div
+              v-else
               v-for="(data, i) in javascript"
               :key="i"
               class="tile is-child box has-background-warning"
@@ -61,8 +68,15 @@
           Haskell
         </h3>
         <div class="tile is-ancestor columns is-centered has-text-centered">
-          <div class="tile column  is-vertical is-parent ">
+          <div class="tile column  is-vertical is-parent">
             <div
+              v-if="haskell.length == 0"
+              class="tile is-child box has-background-warning"
+            >
+              <Loading />
+            </div>
+            <div
+              v-else
               v-for="(data, i) in haskell"
               :key="i"
               class="tile is-child box has-background-warning"
@@ -89,8 +103,16 @@
           Rust
         </h3>
         <div class="tile is-ancestor columns is-centered has-text-centered">
-          <div class="tile column is-vertical is-parent ">
+          <div class="tile column is-vertical is-parent">
             <div
+              v-if="rust.length == 0"
+              class="tile is-child box has-background-warning"
+            >
+              <Loading />
+            </div>
+
+            <div
+              v-else
               v-for="(data, i) in rust"
               :key="i"
               class="tile is-child box has-background-warning"
@@ -119,6 +141,9 @@
 <script>
 export default {
   name: 'GithubTrending',
+  components: {
+    Loading: () => import('./Loading')
+  },
   data() {
     return {
       javascript: [],
