@@ -178,6 +178,7 @@ export default {
     fetchTrending(since = 'daily') {
       return async (language) => {
         try {
+          this[language] = []
           this.isFetching = true
           const baseUrl = `https://github-trending-api.now.sh/repositories?since=${since}&spoken_language_code=en`
           const url = `${baseUrl}&language=${language}`
