@@ -180,8 +180,8 @@ export default {
         try {
           this[language] = []
           this.isFetching = true
-          const baseUrl = `https://github-trending-api.now.sh/repositories?since=${since}&spoken_language_code=en`
-          const url = `${baseUrl}&language=${language}`
+          const baseUrl = `https://github-trending-api.now.sh`
+          const url = `${baseUrl}/repositories?since=${since}&spoken_language_code=en&language=${language}`
 
           const res = await fetch(url)
           const data = await res.json()
