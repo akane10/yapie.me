@@ -6,7 +6,10 @@
     <div class="field">
       <div class="control has-text-centered">
         <div
-          :class="{ 'is-loading': isFetching }"
+          :class="{
+            'is-loading':
+              isFetching.javascript || isFetching.haskell || isFetching.rust
+          }"
           class="select is-warning is-small "
         >
           <label for="since">
@@ -16,117 +19,51 @@
               @change="changeSince"
               class="has-background-black has-text-warning"
             >
-              <option>daily</option>
-              <option>weekly</option>
-              <option>monthly</option>
+              <option class="has-text-warning">daily</option>
+              <option class="has-text-warning">weekly</option>
+              <option class="has-text-warning">monthly</option>
             </select>
           </label>
         </div>
       </div>
     </div>
     <div class="columns is-centered is-multiline is-desktop">
-      <div class="column">
-        <h3
-          id="subtitle-github"
-          class="has-text-centered subtitle has-text-warning is-marginless"
-        >
-          Javascript
+      <div v-for="(lang, i) in languages" :key="i" class="column">
+        <h3 class="has-text-centered subtitle has-text-warning is-marginless">
+          <span id="subtitle-github">{{ lang }}</span>
         </h3>
         <div class="tile is-ancestor columns is-centered has-text-centered">
           <div class="tile column is-vertical is-parent">
             <div
-              v-if="javascript.length == 0"
-              class="tile is-child box has-background-warning"
-            >
-              <Loading />
-            </div>
-            <div
-              v-else
-              v-for="(data, i) in javascript"
-              :key="i"
-              class="tile is-child box has-background-warning"
-            >
-              <a :href="data.url" rel="noreferrer dns-prefetch" target="_blank">
-                <div class="title content-github">
-                  {{ data.name }}
-                </div>
-                <div class="has-text-dark content-github">
-                  {{ data.description }}
-                </div>
-                <div class="tags is-centered">
-                  <div class="tag is-black">
-                    <span>{{ data.language }}</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column">
-        <h3 class="has-text-centered subtitle has-text-warning is-marginless">
-          Haskell
-        </h3>
-        <div class="tile is-ancestor columns is-centered has-text-centered">
-          <div class="tile column  is-vertical is-parent">
-            <div
-              v-if="haskell.length == 0"
-              class="tile is-child box has-background-warning"
-            >
-              <Loading />
-            </div>
-            <div
-              v-else
-              v-for="(data, i) in haskell"
-              :key="i"
-              class="tile is-child box has-background-warning"
-            >
-              <a :href="data.url" rel="noreferrer dns-prefetch" target="_blank">
-                <div class="title content-github">
-                  {{ data.name }}
-                </div>
-                <div class="has-text-dark content-github">
-                  {{ data.description }}
-                </div>
-                <div class="tags is-centered">
-                  <div class="tag is-black">
-                    <span>{{ data.language }}</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column">
-        <h3 class="has-text-centered subtitle has-text-warning is-marginless">
-          Rust
-        </h3>
-        <div class="tile is-ancestor columns is-centered has-text-centered">
-          <div class="tile column is-vertical is-parent">
-            <div
-              v-if="rust.length == 0"
+              v-if="isFetching[lang]"
               class="tile is-child box has-background-warning"
             >
               <Loading />
             </div>
 
             <div
-              v-else
-              v-for="(data, i) in rust"
-              :key="i"
+              v-else-if="err[lang]"
               class="tile is-child box has-background-warning"
             >
-              <a :href="data.url" rel="noreferrer dns-prefetch" target="_blank">
+              Upps something went wrong
+            </div>
+
+            <div
+              v-else
+              v-for="(x, ii) in data[lang]"
+              :key="ii"
+              class="tile is-child box has-background-warning"
+            >
+              <a :href="x.url" rel="noreferrer dns-prefetch" target="_blank">
                 <div class="title content-github">
-                  {{ data.name }}
+                  {{ x.name }}
                 </div>
                 <div class="has-text-dark content-github">
-                  {{ data.description }}
+                  {{ x.description }}
                 </div>
                 <div class="tags is-centered">
                   <div class="tag is-black">
-                    <span>{{ data.language }}</span>
+                    <span>{{ x.language }}</span>
                   </div>
                 </div>
               </a>
@@ -146,11 +83,23 @@ export default {
   },
   data() {
     return {
-      javascript: [],
-      haskell: [],
-      rust: [],
+      languages: ['javascript', 'haskell', 'rust'],
+      data: {
+        javascript: [],
+        haskell: [],
+        rust: []
+      },
       since: 'daily',
-      isFetching: false
+      isFetching: {
+        javascript: true,
+        haskell: true,
+        rust: true
+      },
+      err: {
+        javascript: false,
+        haskell: false,
+        rust: false
+      }
     }
   },
   computed: {
@@ -178,18 +127,18 @@ export default {
     fetchTrending(since = 'daily') {
       return async (language) => {
         try {
-          this[language] = []
-          this.isFetching = true
+          this.data[language] = []
+          this.isFetching[language] = true
+
           const baseUrl = `https://github-trending-api.now.sh`
           const url = `${baseUrl}/repositories?since=${since}&spoken_language_code=en&language=${language}`
-
           const res = await fetch(url)
           const data = await res.json()
 
-          this[language] = data.slice(0, 3)
-          this.isFetching = false
+          this.data[language] = data.slice(0, 3)
+          this.isFetching[language] = false
         } catch (e) {
-          this.isFetching = false
+          this.isFetching[language] = false
         }
       }
     }
@@ -205,5 +154,9 @@ export default {
 .content-github {
   margin-bottom: 10px;
   font-size: 1rem;
+}
+
+#subtitle-github {
+  text-transform: capitalize;
 }
 </style>
