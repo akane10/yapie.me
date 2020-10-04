@@ -45,7 +45,7 @@
               v-else-if="err[lang]"
               class="tile is-child box has-background-warning"
             >
-              Upps something went wrong
+              Upps sorry, something went wrong
             </div>
 
             <div
@@ -127,6 +127,7 @@ export default {
     fetchTrending(since = 'daily') {
       return async (language) => {
         try {
+          this.err[language] = false
           this.data[language] = []
           this.isFetching[language] = true
 
@@ -139,6 +140,7 @@ export default {
           this.isFetching[language] = false
         } catch (e) {
           this.isFetching[language] = false
+          this.err[language] = true
         }
       }
     }
