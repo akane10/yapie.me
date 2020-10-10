@@ -62,7 +62,9 @@ export default {
     ]
   ],
   pwa: {
-    icon: false,
+    icon: {
+      cacheDir: 'icon'
+    },
     manifest: {
       name: 'Yapie Rosyadie',
       short_name: 'Yapie',
