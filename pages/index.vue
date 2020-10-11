@@ -29,7 +29,7 @@
             </div>
 
             <!-- Github Trending -->
-            <GithubTrending />
+            <GithubTrending keep-alive />
           </div>
 
           <!-- Tweets -->
