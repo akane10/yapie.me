@@ -63,7 +63,7 @@
                 </div>
                 <div class="tags is-centered">
                   <div class="tag is-black">
-                    <span>{{ x.programming_language }}</span>
+                    <span>{{ x.language }}</span>
                   </div>
                 </div>
               </a>
@@ -131,8 +131,8 @@ export default {
           this.data[language] = []
           this.isFetching[language] = true
 
-          const baseUrl = `https://gtrending.yapie.me`
-          const url = `${baseUrl}/repos?since=${since}&spoken_lang=en&language=${language}`
+          const baseUrl = `https://gtrend.yapie.me`
+          const url = `${baseUrl}/repositories?since=${since}&spoken_languange_code=en&language=${language}`
           const res = await fetch(url)
           const data = await res.json()
 
