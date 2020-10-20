@@ -131,7 +131,7 @@ export default {
           this.data[language] = []
           this.isFetching[language] = true
 
-          const baseUrl = `https://gtrend.yapie.me`
+          const baseUrl = `https://gtrending.yapie.me`
           const url = `${baseUrl}/repositories?since=${since}&spoken_language_code=en&language=${language}`
           const res = await fetch(url)
           const data = await res.json()
