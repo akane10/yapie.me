@@ -354,6 +354,24 @@ export const data = [
     description: 'Code Practice and Mentorship for Everyone.',
     link: 'https://exercism.io/',
     tags: ['platform']
+  },
+  {
+    name: 'learn4haskell',
+    description: 'Learn Haskell basics in 4 pull requests',
+    link: 'https://github.com/kowainik/learn4haskell',
+    tags: ['haskell', 'functional programming']
+  },
+  {
+    name: "kowainik's blog",
+    description: "kowainik's blog",
+    link: 'https://kowainik.github.io/posts',
+    tags: ['haskell', 'functional programming']
+  },
+  {
+    name: "veronika romashkina's blog",
+    description: "veronika romashkina's blog",
+    link: 'https://vrom911.github.io/blog',
+    tags: ['haskell', 'functional programming']
   }
 ]
 
