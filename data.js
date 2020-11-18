@@ -13,6 +13,12 @@ export const data = [
     tags: ['book', 'computer science']
   },
   {
+    name: 'Open Source Society University',
+    description: 'Path to a free self-taught education in Computer Science!',
+    link: 'https://github.com/ossu/computer-science',
+    tags: ['computer science']
+  },
+  {
     name: 'Javascript Algorithms',
     description:
       'Algorithms and data structures implemented in JavaScript with explanations and links to further readings',
