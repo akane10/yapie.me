@@ -112,6 +112,8 @@
 </template>
 
 <script>
+import { data } from '../data'
+
 export default {
   name: 'LearningResources',
   layout: 'main',
@@ -136,13 +138,14 @@ export default {
   data() {
     return {
       s: '',
-      activeTags: []
+      activeTags: [],
+      allResources: data.reverse()
     }
   },
   computed: {
-    allResources() {
-      return this.$store.state.learningResources.allResources
-    },
+    // allResources() {
+    // return this.$store.state.learningResources.allResources
+    // },
     activeResources() {
       const tags = this.activeTags
       const data = this.allResources
