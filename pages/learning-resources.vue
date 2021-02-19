@@ -180,7 +180,7 @@ export default {
   },
   mounted() {
     const { s, tags } = this.$nuxt.$route.query
-    // console.log({ s, tags })
+
     if (s) {
       this.s = s.toLowerCase()
     }
