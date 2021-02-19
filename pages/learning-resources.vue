@@ -54,16 +54,16 @@
               </p>
 
               <!-- Filter by title -->
-              <!-- <div class="field"> -->
-              <!-- <div class="control"> -->
-              <!-- <input -->
-              <!-- @change="filter" -->
-              <!-- class="input is-warning" -->
-              <!-- type="text" -->
-              <!-- placeholder="Filter by title" -->
-              <!-- /> -->
-              <!-- </div> -->
-              <!-- </div> -->
+              <div class="field">
+                <div class="control">
+                  <input
+                    v-model="s"
+                    class="input is-warning"
+                    type="text"
+                    placeholder="Filter by title"
+                  />
+                </div>
+              </div>
               <!-- Select All -->
               <div
                 class="field is-grouped is-grouped-multiline is-grouped-centered"
@@ -144,25 +144,35 @@ export default {
   },
   computed: {
     activeResources() {
-      const tags = this.activeTags
-      const data = this.allResources
+      const { activeTags, allResources, s } = this
 
-      const is = (tag) => (tag1) => ({
-        ...tag1,
-        is: tag1.tags.includes(tag)
-      })
-      // ap :: [a -> b] -> [a] -> [b]
+      const is = (tag) => (data) => {
+        if (data.tags.includes(tag)) {
+          return data
+        } else {
+          return null
+        }
+      } // ap :: [a -> b] -> [a] -> [b]
       const ap = (fns) => (xs) =>
         fns.reduce((acc, fn) => acc.concat(xs.map(fn)), [])
       // lift :: (a -> b -> c) -> [a] -> [b] -> [c]
       const lift = (fn) => (a) => (b) => ap(a.map(fn))(b)
-      const res = lift(is)(tags)(data).filter((i) => i.is)
-      return res.filter(
-        (v, i, a) => a.findIndex((t) => t.name === v.name) === i
+      const res = lift(is)(activeTags)(allResources).filter(Boolean)
+
+      const results = res.filter((i) =>
+        i.name.toLowerCase().includes(s.toLowerCase())
       )
+
+      this.removeUnknownTags()
+      this.router()
+      return [...new Set(results)]
     },
     allTags() {
-      return [...new Set(this.allResources.flatMap((i) => i.tags))]
+      return [
+        ...new Set(
+          this.allResources.flatMap((i) => i.tags.map((ii) => ii.toLowerCase()))
+        )
+      ]
     },
     isAllTagsSelected() {
       return this.activeTags.length === this.allTags.length
@@ -172,7 +182,7 @@ export default {
     const { s, tags } = this.$nuxt.$route.query
     // console.log({ s, tags })
     if (s) {
-      this.s = s
+      this.s = s.toLowerCase()
     }
 
     if (tags) {
@@ -221,10 +231,6 @@ export default {
         this.activeTags = []
       }
       this.router()
-    },
-    filter(e) {
-      // const { value } = e.target
-      // this.$store.commit('learningResources/filterResources', value)
     }
   }
 }
