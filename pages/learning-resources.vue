@@ -19,7 +19,7 @@
           <div class="tile is-ancestor columns is-centered has-text-centered">
             <div class="tile column is-10-desktop is-vertical is-parent ">
               <div
-                v-for="resource in resources"
+                v-for="resource in activeResources"
                 :key="resource.id"
                 class="tile is-child box has-background-warning"
               >
@@ -50,20 +50,20 @@
             <div class="column is-8-desktop">
               <p class="has-text-warning has-text-centered is-size-5">
                 All Resources: {{ allResources.length }} | Selected:
-                {{ resources.length }}
+                {{ activeResources.length }}
               </p>
 
               <!-- Filter by title -->
-              <!-- <div class="field"> -->
-              <!-- <div class="control"> -->
-              <!-- <input -->
-              <!-- @change="filter" -->
-              <!-- class="input is-warning" -->
-              <!-- type="text" -->
-              <!-- placeholder="Filter by title" -->
-              <!-- /> -->
-              <!-- </div> -->
-              <!-- </div> -->
+              <div class="field">
+                <div class="control">
+                  <input
+                    @change="filter"
+                    class="input is-warning"
+                    type="text"
+                    placeholder="Filter by title"
+                  />
+                </div>
+              </div>
               <!-- Select All -->
               <div
                 class="field is-grouped is-grouped-multiline is-grouped-centered"
@@ -81,18 +81,26 @@
                   </a>
                 </span>
               </div>
+
               <!-- Tags -->
               <div
                 class="field is-grouped is-grouped-multiline is-grouped-centered"
               >
-                <span v-for="(tag, i) in tags" :key="i" class="control">
+                <span v-for="(tag, i) in allTags" :key="i" class="control">
                   <span
-                    @click="selectTag(i)"
-                    :class="{ 'is-selected': tag.isSelected }"
+                    @click="selectTag(tag)"
+                    :class="{ 'is-selected': isTagSelected(tag) }"
                     class="button"
                   >
-                    <div>{{ tag.name }}</div>
+                    <div>{{ tag }}</div>
                   </span>
+                  <!-- <NuxtLink -->
+                  <!-- class="button" -->
+                  <!-- :class="{ 'is-selected': isTagSelected(tag) }" -->
+                  <!-- :to="'/learning-resources?' + setUrl(tag)" -->
+                  <!-- > -->
+                  <!-- {{ tag }} -->
+                  <!-- </NuxtLink> -->
                 </span>
               </div>
             </div>
@@ -125,47 +133,98 @@ export default {
       ]
     }
   },
+  data() {
+    return {
+      s: '',
+      activeTags: []
+    }
+  },
   computed: {
     allResources() {
       return this.$store.state.learningResources.allResources
     },
-    resources() {
-      return this.$store.state.learningResources.resources
+    activeResources() {
+      const tags = this.activeTags
+      const data = this.allResources
+
+      const is = (tag) => (tag1) => ({
+        ...tag1,
+        is: tag1.tags.includes(tag)
+      })
+      // ap :: [a -> b] -> [a] -> [b]
+      const ap = (fns) => (xs) =>
+        fns.reduce((acc, fn) => acc.concat(xs.map(fn)), [])
+      // lift :: (a -> b -> c) -> [a] -> [b] -> [c]
+      const lift = (fn) => (a) => (b) => ap(a.map(fn))(b)
+      const res = lift(is)(tags)(data).filter((i) => i.is)
+      return res.filter(
+        (v, i, a) => a.findIndex((t) => t.name === v.name) === i
+      )
     },
-    tags() {
-      return this.$store.state.learningResources.tags
+    allTags() {
+      return [...new Set(this.allResources.flatMap((i) => i.tags))]
     },
     isAllTagsSelected() {
-      const x = this.tags.filter((i) => i.isSelected).length
-      const y = this.tags.length
-      return x === y
+      return this.activeTags.length === this.allTags.length
     }
   },
   mounted() {
-    const allResources = this.allResources
-    this.$store.commit('learningResources/setTags', allResources)
+    const { s, tags } = this.$nuxt.$route.query
+    // console.log({ s, tags })
+    if (s) {
+      this.s = s
+    }
 
-    const randomNumber = Math.floor(Math.random() * this.tags.length)
-    this.selectTag(randomNumber)
+    if (tags) {
+      this.activeTags = tags.toLowerCase().split(',')
+    } else {
+      this.activeTags = this.allTags
+    }
+    this.removeUnknownTags()
+    this.router()
   },
   methods: {
-    selectTag(i) {
-      this.$store.commit('learningResources/selectTag', i)
+    router() {
+      if (this.activeTags.length === 0) {
+        this.$router.push({
+          path: this.$route.path
+        })
+      } else {
+        this.$router.push({
+          path: this.$route.path,
+          query: { tags: this.activeTags.toString() }
+        })
+      }
+    },
+    removeUnknownTags() {
+      this.activeTags = this.activeTags.filter(
+        (i) => !!this.allTags.find((ii) => ii === i)
+      )
+    },
+    isTagSelected(tag) {
+      return !!this.activeTags.find((i) => i === tag)
+    },
+    selectTag(tag) {
+      if (this.isTagSelected(tag)) {
+        this.activeTags = this.activeTags.filter((i) => i !== tag)
+      } else {
+        this.activeTags.push(tag)
+      }
 
-      const tags = this.tags.filter((i) => i.isSelected).map((i) => i.name)
-      const data = this.allResources
-      this.$store.commit('learningResources/setResources', { tags, data })
+      this.removeUnknownTags()
+      this.router()
     },
     selectAllTags(bool) {
-      this.$store.commit('learningResources/selectAllTags', bool)
-
-      const tags = this.tags.filter((i) => i.isSelected).map((i) => i.name)
-      const data = this.allResources
-      this.$store.commit('learningResources/setResources', { tags, data })
+      if (bool) {
+        this.activeTags = this.allTags
+      } else {
+        this.activeTags = []
+      }
+      this.router()
     },
     filter(e) {
-      const { value } = e.target
-      this.$store.commit('learningResources/filterResources', value)
+      // const { value } = e.target
+      // this.$store.commit('learningResources/filterResources', value)
     }
   }
 }
