@@ -54,16 +54,16 @@
               </p>
 
               <!-- Filter by title -->
-              <div class="field">
-                <div class="control">
-                  <input
-                    @change="filter"
-                    class="input is-warning"
-                    type="text"
-                    placeholder="Filter by title"
-                  />
-                </div>
-              </div>
+              <!-- <div class="field"> -->
+              <!-- <div class="control"> -->
+              <!-- <input -->
+              <!-- @change="filter" -->
+              <!-- class="input is-warning" -->
+              <!-- type="text" -->
+              <!-- placeholder="Filter by title" -->
+              <!-- /> -->
+              <!-- </div> -->
+              <!-- </div> -->
               <!-- Select All -->
               <div
                 class="field is-grouped is-grouped-multiline is-grouped-centered"
