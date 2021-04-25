@@ -139,7 +139,7 @@ export default {
     return {
       s: '',
       activeTags: [],
-      allResources: data.reverse()
+      allResources: [...data].reverse()
     }
   },
   computed: {
