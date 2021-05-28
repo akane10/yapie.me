@@ -14,94 +14,96 @@
     </section>
 
     <section id="content-section" class="section">
-      <div class="columns">
-        <div class="column">
-          <div class="tile is-ancestor columns is-centered has-text-centered">
-            <div class="tile column is-10-desktop is-vertical is-parent ">
-              <div
-                v-for="resource in activeResources"
-                :key="resource.id"
-                class="tile is-child box has-background-warning"
-              >
-                <a :href="resource.link" rel="noreferrer" target="_blank">
-                  <div class="title the-content">
-                    {{ resource.name }}
-                  </div>
-                  <div class="has-text-dark the-content">
-                    {{ resource.description }}
-                  </div>
-                  <div class="tags is-centered">
-                    <div
-                      v-for="(tag, i) in resource.tags"
-                      :key="i"
-                      class="tag is-black"
-                    >
-                      <span> {{ tag }}</span>
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <div class="tile is-ancestor columns is-centered has-text-centered">
+              <div class="tile column is-10-desktop is-vertical is-parent ">
+                <div
+                  v-for="resource in activeResources"
+                  :key="resource.id"
+                  class="tile is-child box has-background-warning"
+                >
+                  <a :href="resource.link" rel="noreferrer" target="_blank">
+                    <div class="title the-content">
+                      {{ resource.name }}
                     </div>
-                  </div>
-                </a>
+                    <div class="has-text-dark the-content">
+                      {{ resource.description }}
+                    </div>
+                    <div class="tags is-centered">
+                      <div
+                        v-for="(tag, i) in resource.tags"
+                        :key="i"
+                        class="tag is-black"
+                      >
+                        <span> {{ tag }}</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="column">
-          <!-- Tags -->
-          <div class="columns is-centered">
-            <div class="column is-8-desktop">
-              <p class="has-text-warning has-text-centered is-size-5">
-                All Resources: {{ allResources.length }} | Selected:
-                {{ activeResources.length }}
-              </p>
+          <div class="column">
+            <!-- Tags -->
+            <div class="columns is-centered">
+              <div class="column is-8-desktop">
+                <p class="has-text-warning has-text-centered is-size-5">
+                  All Resources: {{ allResources.length }} | Selected:
+                  {{ activeResources.length }}
+                </p>
 
-              <!-- Filter by title -->
-              <div class="field">
-                <div class="control">
-                  <input
-                    v-model="s"
-                    class="input is-warning"
-                    type="text"
-                    placeholder="Filter by title"
-                  />
+                <!-- Filter by title -->
+                <div class="field">
+                  <div class="control">
+                    <input
+                      v-model="s"
+                      class="input is-warning"
+                      type="text"
+                      placeholder="Filter by title"
+                    />
+                  </div>
                 </div>
-              </div>
-              <!-- Select All -->
-              <div
-                class="field is-grouped is-grouped-multiline is-grouped-centered"
-              >
-                <span class="control">
-                  <a
-                    @click="selectAllTags(false)"
-                    v-if="isAllTagsSelected"
-                    class="button"
-                  >
-                    <div>Unselect All</div>
-                  </a>
-                  <a @click="selectAllTags(true)" v-else class="button">
-                    <div>Select All</div>
-                  </a>
-                </span>
-              </div>
-
-              <!-- Tags -->
-              <div
-                class="field is-grouped is-grouped-multiline is-grouped-centered"
-              >
-                <span v-for="(tag, i) in allTags" :key="i" class="control">
-                  <span
-                    @click="selectTag(tag)"
-                    :class="{ 'is-selected': isTagSelected(tag) }"
-                    class="button"
-                  >
-                    <div>{{ tag }}</div>
+                <!-- Select All -->
+                <div
+                  class="field is-grouped is-grouped-multiline is-grouped-centered"
+                >
+                  <span class="control">
+                    <a
+                      @click="selectAllTags(false)"
+                      v-if="isAllTagsSelected"
+                      class="button"
+                    >
+                      <div>Unselect All</div>
+                    </a>
+                    <a @click="selectAllTags(true)" v-else class="button">
+                      <div>Select All</div>
+                    </a>
                   </span>
-                  <!-- <NuxtLink -->
-                  <!-- class="button" -->
-                  <!-- :class="{ 'is-selected': isTagSelected(tag) }" -->
-                  <!-- :to="'/learning-resources?' + setUrl(tag)" -->
-                  <!-- > -->
-                  <!-- {{ tag }} -->
-                  <!-- </NuxtLink> -->
-                </span>
+                </div>
+
+                <!-- Tags -->
+                <div
+                  class="field is-grouped is-grouped-multiline is-grouped-centered"
+                >
+                  <span v-for="(tag, i) in allTags" :key="i" class="control">
+                    <span
+                      @click="selectTag(tag)"
+                      :class="{ 'is-selected': isTagSelected(tag) }"
+                      class="button"
+                    >
+                      <div>{{ tag }}</div>
+                    </span>
+                    <!-- <NuxtLink -->
+                    <!-- class="button" -->
+                    <!-- :class="{ 'is-selected': isTagSelected(tag) }" -->
+                    <!-- :to="'/learning-resources?' + setUrl(tag)" -->
+                    <!-- > -->
+                    <!-- {{ tag }} -->
+                    <!-- </NuxtLink> -->
+                  </span>
+                </div>
               </div>
             </div>
           </div>
