@@ -66,9 +66,6 @@ export default {
 </script>
 
 <style scoped>
-#body {
-  padding: 0 500px;
-}
 #home {
   min-height: 100vh;
 }
