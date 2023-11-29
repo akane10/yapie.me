@@ -31,31 +31,6 @@
             <!-- Github Trending -->
             <GithubTrending keep-alive />
           </div>
-
-          <!-- Tweets -->
-          <div class="column is-5-tablet is-4-desktop">
-            <!-- <Tweet
-              id="1005810974241067008"
-              :options="{ theme: 'dark', align: 'center' }"
-            >
-            </Tweet> -->
-            <Tweet
-              id="1182672851532423172"
-              :options="{
-                theme: 'dark',
-                conversation: 'none',
-                align: 'center'
-              }"
-            ></Tweet>
-            <Tweet
-              id="1172329470390239241"
-              :options="{ theme: 'dark', align: 'center' }"
-            ></Tweet>
-            <Tweet
-              id="1118170968055218176"
-              :options="{ theme: 'dark', align: 'center' }"
-            ></Tweet>
-          </div>
         </div>
       </section>
     </div>
@@ -63,14 +38,11 @@
 </template>
 
 <script>
-import { Tweet } from 'vue-tweet-embed'
-
 export default {
   name: 'Index',
   layout: 'main',
   components: {
-    GithubTrending: () => import('../components/GithubTrending'),
-    Tweet
+    GithubTrending: () => import('../components/GithubTrending')
   },
   head() {
     return {
