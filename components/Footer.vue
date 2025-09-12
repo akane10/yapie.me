@@ -26,14 +26,6 @@
         >
           <fa :icon="faTwitter" />
         </a>
-        <a
-          rel="noreferrer"
-          href="https://www.linkedin.com/in/yapie-rosyadie"
-          target="_blank"
-          class="sm has-text-success"
-        >
-          <fa :icon="faLinkedin" />
-        </a>
       </div>
       <div class="block">
         <h4 class="has-text-warning">Yapie Rosyadie</h4>
@@ -46,8 +38,7 @@
 import {
   faGithub,
   faGitlab,
-  faTwitter,
-  faLinkedin
+  faTwitter
 } from '@fortawesome/free-brands-svg-icons'
 
 export default {
@@ -61,9 +52,6 @@ export default {
     },
     faTwitter() {
       return faTwitter
-    },
-    faLinkedin() {
-      return faLinkedin
     }
   }
 }
