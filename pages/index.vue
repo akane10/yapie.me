@@ -27,9 +27,6 @@
                 >
               </div>
             </div>
-
-            <!-- Github Trending -->
-            <GithubTrending keep-alive />
           </div>
         </div>
       </section>
@@ -41,9 +38,7 @@
 export default {
   name: 'Index',
   layout: 'main',
-  components: {
-    GithubTrending: () => import('../components/GithubTrending')
-  },
+  components: {},
   head() {
     return {
       title: '</Home>',
