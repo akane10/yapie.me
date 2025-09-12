@@ -110,6 +110,10 @@ export default {
     }
   },
 
+  router: {
+    base: '/yapie.me/'
+  },
+
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
